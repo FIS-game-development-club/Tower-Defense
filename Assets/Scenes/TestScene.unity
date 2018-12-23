@@ -501,10 +501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f091c840f212412eb80219bb2deeecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  waves: 0
-  enemyPerWave: 0
-  waveTime: 0
+  enemy: {fileID: 1375419925}
+  waves: 1
+  enemyPerWave: 3
+  waveTime: 100
   PrepareTime: 0
 --- !u!1 &902745962
 GameObject:
@@ -745,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1375419926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -817,7 +817,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: {fileID: 2110789190}
-  speed: 5
+  speed: 3
+  Randomness: 0.1
 --- !u!1 &1403783152
 GameObject:
   m_ObjectHideFlags: 0
