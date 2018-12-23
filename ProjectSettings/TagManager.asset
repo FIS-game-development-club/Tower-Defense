@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TowerSpot
   - tower
+  - enemy
   layers:
   - Default
   - TransparentFX
