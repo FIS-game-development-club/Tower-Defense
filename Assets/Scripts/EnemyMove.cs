@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour {
     private int current = 0;
     private Transform next;
     public float speed;
-    public float Randomness;
+    private float Randomness;
 
 
     void Start()
@@ -48,7 +48,7 @@ public class EnemyMove : MonoBehaviour {
         }
 
         next = path[current];
-        next.position += new Vector3(Xchange * Random.Range(0, Randomness),Ychange * Random.Range(0, Randomness), 0);
+        next.position += new Vector3(Xchange * Random.Range(0, Random.Range(0, Randomness)), Ychange * Random.Range(0, Random.Range(0, Randomness)));
 
     }
 }

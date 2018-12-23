@@ -506,6 +506,7 @@ MonoBehaviour:
   enemyPerWave: 3
   waveTime: 100
   PrepareTime: 0
+  enemyDelay: 3
 --- !u!1 &902745962
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +819,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: {fileID: 2110789190}
   speed: 3
-  Randomness: 0.1
 --- !u!1 &1403783152
 GameObject:
   m_ObjectHideFlags: 0

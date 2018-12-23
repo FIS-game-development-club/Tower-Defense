@@ -10,24 +10,41 @@ public class Spawner : MonoBehaviour {
     public float waveTime;
     public float PrepareTime;
     private float LastWave;
+    public float enemyDelay;
+
+    private float lastSpawn;
 
 	void Start () {
         LastWave = -waveTime + PrepareTime;
+        lastSpawn = 0 - enemyDelay;
 	}
 	
 	void FixedUpdate () {
-		if(Time.time - LastWave >= waveTime){
-            StartWave();
+        if (Time.time - LastWave >= waveTime)
+        {
+            for (int i = 0; i <= enemyPerWave; i++)
+            {
+                bool s = false;
+
+                while (!s)
+                {
+                    if (Time.time - lastSpawn >= enemyDelay)
+                    {
+                        s = true;
+                    }
+                    Debug.Log("loop");
+                }
+
+                spawn();
+                lastSpawn = Time.time;
+            }
             LastWave = Time.time;
         }
 	}
 
-    void StartWave()
-    {
-        for(int i = 0; i <= enemyPerWave; i++)
-        {
-            GameObject newEnemy = Instantiate(enemy, gameObject.transform.position, new Quaternion());
-            newEnemy.SetActive(true);
-        }
+    private void spawn() {
+        GameObject newEnemy = Instantiate(enemy, gameObject.transform.position, enemy.transform.rotation);
+        newEnemy.GetComponent<EnemyMove>().speed += Random.Range(-0.1f, 0.1f);
+        newEnemy.SetActive(true);
     }
 }
