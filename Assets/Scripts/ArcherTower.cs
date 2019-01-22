@@ -11,10 +11,10 @@ public class ArcherTower : MonoBehaviour {
         GameObject value = CheckRange(Range);
         print(value);
         if (value != null){
-            Vector3 before = transform.rotation.eulerAngles;
-            transform.LookAt(value.transform, new Vector3(0, 1, 0));
-            before.z = transform.rotation.eulerAngles.z;
-            transform.eulerAngles = before;
+            Vector2 direction = new Vector2(
+            value.transform.position.x - transform.position.x,
+            value.transform.position.y - transform.position.y);
+            transform.up = direction;
         }
     }
 

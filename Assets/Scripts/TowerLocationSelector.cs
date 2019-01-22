@@ -48,6 +48,7 @@ public class TowerLocationSelector : MonoBehaviour {
             {
                 places[active].GetComponent<PlaceTower>().place("archer");
                 places.RemoveAt(active);
+                active = 0;
             }
         }
     }

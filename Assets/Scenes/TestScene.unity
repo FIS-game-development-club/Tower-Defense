@@ -1066,8 +1066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: {fileID: 2110789190}
-  speed: 2.75
-  Randomness: 1.25
+  speed: 1
+  Randomness: 3
 --- !u!1 &1403783152
 GameObject:
   m_ObjectHideFlags: 0
