@@ -14,7 +14,7 @@ public class TowerLocationSelector : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (places.Count != 0)
+        if (places.Count > 0)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -25,6 +25,7 @@ public class TowerLocationSelector : MonoBehaviour {
             {
                 change = -1;
             }
+
             if (change != 0)
             {
                 places[active].GetComponent<PlaceTower>().DeSelected();
@@ -38,6 +39,7 @@ public class TowerLocationSelector : MonoBehaviour {
                 {
                     active = 0;
                 }
+
                 places[active].GetComponent<PlaceTower>().Selected();
                 change = 0;
             }
@@ -46,7 +48,6 @@ public class TowerLocationSelector : MonoBehaviour {
             {
                 places[active].GetComponent<PlaceTower>().place("archer");
                 places.RemoveAt(active);
-                active = 0;
             }
         }
     }

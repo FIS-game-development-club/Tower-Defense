@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour {
     private int current = 0;
     private Transform next;
     public float speed;
-    private float Randomness;
+    public float Randomness;
 
 
     void Start()
@@ -18,31 +18,36 @@ public class EnemyMove : MonoBehaviour {
         {
             path.Add(child);
         }
+
         transform.position = path[0].position;
-        next = path[0];
+        EstablishNext();
     }
 
-    void FixedUpdate () {
-
-    if(transform.position == next.position && current < path.Count -1)
+    void FixedUpdate()
+    {
+        if (current != path.Count - 1)
         {
-            current++;
-            EstablishNext();
-        }
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, next.position, step);
+            if (transform.position == next.position && current < path.Count - 1)
+            {
+                EstablishNext();
+                current++;
+            }
 
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, next.position, step);
+
+        }
     }
 
     void EstablishNext()
     {
         int Xchange = 1;
-        if (path[current - 1].position.x <= path[current].position.x){
+        if (path[current].position.x >= path[current + 1].position.x){
             Xchange = -1;
         }
 
         int Ychange = 1;
-        if (path[current - 1].position.y <= path[current].position.y)
+        if (path[current].position.y >= path[current + 1].position.y)
         {
             Ychange = -1;
         }
